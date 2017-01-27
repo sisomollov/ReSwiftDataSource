@@ -1,0 +1,6 @@
+framework module ReSwiftDataSource {
+  umbrella header "ReSwiftDataSource-umbrella.h"
+
+  export *
+  module * { export * }
+}
