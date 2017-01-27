@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'ReSwiftDataSource/Classes/**/*'
+  s.source_files = 'ReSwiftDataSource/Source/**/*'
   
   # s.resource_bundles = {
   #   'ReSwiftDataSource' => ['ReSwiftDataSource/Assets/*.png']
@@ -39,4 +39,6 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.framework = 'UIKit'
+  s.dependency 'ReSwift', '~> 3.0.0'
 end

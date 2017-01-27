@@ -1,7 +1,9 @@
 PODS:
   - Nimble (5.1.1)
   - Quick (1.0.0)
-  - ReSwiftDataSource (0.1.0)
+  - ReSwift (3.0.0)
+  - ReSwiftDataSource (0.1.0):
+    - ReSwift (~> 3.0.0)
 
 DEPENDENCIES:
   - Nimble (~> 5.1.1)
@@ -15,7 +17,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  ReSwiftDataSource: fcb0eeaa34cb70d69ae1c8964feee3543448f1be
+  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
+  ReSwiftDataSource: 34bd28aab68824ca69f94d9d83980c95e9a5da33
 
 PODFILE CHECKSUM: 9ab67644a6cfd756739db04f29e22a192c73e7c3
 

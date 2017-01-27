@@ -18,5 +18,13 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "ReSwiftDataSource/Classes/**/*"
+  "source_files": "ReSwiftDataSource/Source/**/*",
+  "ios": {
+    "frameworks": "UIKit"
+  },
+  "dependencies": {
+    "ReSwift": [
+      "~> 3.0.0"
+    ]
+  }
 }
