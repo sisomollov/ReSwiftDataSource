@@ -1,24 +1,29 @@
-//
-//  ViewController.swift
-//  ReSwiftDataSource
-//
-//  Created by SiSo Mollov on 01/27/2017.
-//  Copyright (c) 2017 SiSo Mollov. All rights reserved.
-//
 
 import UIKit
+import ReSwiftDataSource
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: StatableCollectionView!
+
+    var wrapper: StatableCollectionWrapper!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let layout = CollectionCellLayout(cellClass: MyCell.self) { cell, model in
+            guard let cell = cell as? MyCell else { return }
+            guard let model = model as? MyItem else { return }
+
+            cell.backgroundColor = model.bgColor
+        }
+        collectionView.addCellLayouts(layout)
+        wrapper = StatableCollectionWrapper(statableView: collectionView)
+        let section = MySection(items: [MyItem(), MyItem()])
+        wrapper.state = MyState(sections: [section])
+
     }
 
 }
+
 
