@@ -2,11 +2,15 @@
 import UIKit
 import ReSwift
 
-public class StatableCollectionWrapper: NSObject {
+open class StatableCollectionWrapper: NSObject {
 
     // MARK: - Public API
     public let statableView: StatableCollectionView
-    public var state: ReloadableState?
+    public var state: ReloadableState? {
+        didSet {
+            performUpdates()
+        }
+    }
 
     public init(statableView: StatableCollectionView) {
         self.statableView = statableView
@@ -16,6 +20,16 @@ public class StatableCollectionWrapper: NSObject {
     }
 
     // MARK: - Private API
+    private func performUpdates() {
+        guard let state = state else { return }
+
+        statableView.performBatchUpdates({
+            let insertItems = state.insertItems
+            if insertItems.count > 0 {
+                self.statableView.insertItems(at: insertItems)
+            }
+        }, completion: nil)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -24,11 +38,13 @@ extension StatableCollectionWrapper: UICollectionViewDataSource {
     public func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
-        var number = 0
 
-        if let section = state?.sections[section] {
-            number = section.items.count
-        }
+        var number = 0
+        guard let sections = state?.sections else { return number }
+        if sections.isEmpty { return number }
+
+        let section = sections[section]
+        number = section.items.count
 
         return number
     }
@@ -56,18 +72,13 @@ extension StatableCollectionWrapper: UICollectionViewDataSource {
     }
 }
 
-//extension StatableCollectionWrapper: UICollectionViewDelegateFlowLayout {
-//    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(width: UIScreen.main.bounds.width, height: 50)
-//    }
-//}
+extension StatableCollectionWrapper: UICollectionViewDelegateFlowLayout {
 
-// MARK: - StoreSubscriber
-extension StatableCollectionWrapper: StoreSubscriber {
-    public typealias StoreSubscriberStateType = ReloadableState
+    public func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    public func newState(state: ReloadableState) {
-        self.state = state
+        return CGSize.zero
     }
 }

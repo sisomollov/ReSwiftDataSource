@@ -4,6 +4,7 @@ import ReSwift
 
 public protocol ReloadableState: StateType {
 
-    var sections: [Secetion] { get set }
+    var sections: [Section] { get set }
+    var insertItems: [IndexPath] { get set }
 }
 

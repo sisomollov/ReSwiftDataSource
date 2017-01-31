@@ -26,6 +26,6 @@ extension CollectionViewProtocol where Self: StatableCollectionView {
 }
 
 
-public class StatableCollectionView: UICollectionView, CollectionViewProtocol {
+open class StatableCollectionView: UICollectionView, CollectionViewProtocol {
     public var layouts: [String: CollectionCellLayout] = [:]
 }

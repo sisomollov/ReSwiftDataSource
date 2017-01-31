@@ -1,6 +1,7 @@
 
 import UIKit
 import ReSwiftDataSource
+import ReSwift
 
 class ViewController: UIViewController {
 
@@ -19,11 +20,27 @@ class ViewController: UIViewController {
         }
         collectionView.addCellLayouts(layout)
         wrapper = StatableCollectionWrapper(statableView: collectionView)
-        let section = MySection(items: [MyItem(), MyItem()])
-        wrapper.state = MyState(sections: [section])
 
+        subscribeToStore()
     }
 
+    @IBAction func addNew(_ sender: UIBarButtonItem) {
+        let one = MyItem(0)
+        let two = MyItem(0)
+        let three = MyItem(0)
+
+        store.dispatch(InsertAction.insertItems([one, two, three]))
+    }
+
+    private func subscribeToStore() {
+        store.subscribe(self)
+    }
 }
 
+extension ViewController: StoreSubscriber {
+    typealias StoreSubscriberStateType = MyState
 
+    func newState(state: MyState) {
+        wrapper.state = state
+    }
+}

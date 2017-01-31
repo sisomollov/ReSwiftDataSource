@@ -11,6 +11,7 @@
 		5C7B18381E3F60DC00172E72 /* SectionsAndItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B18371E3F60DC00172E72 /* SectionsAndItems.swift */; };
 		5C7B183B1E3F613800172E72 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183A1E3F613800172E72 /* MyCell.swift */; };
 		5C7B183E1E3F61AB00172E72 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183D1E3F61AB00172E72 /* MyState.swift */; };
+		5C7B18401E3F6B7700172E72 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183F1E3F6B7700172E72 /* Reducers.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		5C7B18371E3F60DC00172E72 /* SectionsAndItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsAndItems.swift; sourceTree = "<group>"; };
 		5C7B183A1E3F613800172E72 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		5C7B183D1E3F61AB00172E72 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
+		5C7B183F1E3F6B7700172E72 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ReSwiftDataSource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftDataSource_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5C7B183D1E3F61AB00172E72 /* MyState.swift */,
+				5C7B183F1E3F6B7700172E72 /* Reducers.swift */,
 			);
 			path = ReSwift;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C7B18401E3F6B7700172E72 /* Reducers.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				5C7B183B1E3F613800172E72 /* MyCell.swift in Sources */,
 				5C7B18381E3F60DC00172E72 /* SectionsAndItems.swift in Sources */,

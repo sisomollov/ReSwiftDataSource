@@ -1,6 +1,6 @@
 
 import Foundation
 
-public protocol Secetion {
+public protocol Section {
     var items: [Item] { get set }
 }
