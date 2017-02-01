@@ -7,7 +7,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: StatableCollectionView!
 
-    var wrapper: StatableCollectionWrapper!
+    var wrapper: MyWrapper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             cell.backgroundColor = model.bgColor
         }
         collectionView.addCellLayouts(layout)
-        wrapper = StatableCollectionWrapper(statableView: collectionView)
+        wrapper = MyWrapper(statableView: collectionView)
 
         subscribeToStore()
     }
@@ -42,5 +42,14 @@ extension ViewController: StoreSubscriber {
 
     func newState(state: MyState) {
         wrapper.state = state
+    }
+}
+
+
+class MyWrapper: StatableCollectionWrapper {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: 375, height: 100)
     }
 }

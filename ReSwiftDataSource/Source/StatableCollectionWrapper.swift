@@ -17,6 +17,7 @@ open class StatableCollectionWrapper: NSObject {
         super.init()
         
         self.statableView.dataSource = self
+        self.statableView.delegate = self
     }
 
     // MARK: - Private API
@@ -74,11 +75,4 @@ extension StatableCollectionWrapper: UICollectionViewDataSource {
 
 extension StatableCollectionWrapper: UICollectionViewDelegateFlowLayout {
 
-    public func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return CGSize.zero
-    }
 }
