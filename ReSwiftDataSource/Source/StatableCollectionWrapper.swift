@@ -11,6 +11,7 @@ open class StatableCollectionWrapper: NSObject {
             performUpdates()
         }
     }
+    open var updatesCompletion: ((Bool) -> Void)? = nil
 
     public init(statableView: StatableCollectionView) {
         self.statableView = statableView
@@ -29,7 +30,7 @@ open class StatableCollectionWrapper: NSObject {
             if insertItems.count > 0 {
                 self.statableView.insertItems(at: insertItems)
             }
-        }, completion: nil)
+        }, completion: updatesCompletion)
     }
 }
 
