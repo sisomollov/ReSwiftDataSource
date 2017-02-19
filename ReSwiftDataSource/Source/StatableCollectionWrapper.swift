@@ -30,6 +30,11 @@ open class StatableCollectionWrapper: NSObject {
             if insertItems.count > 0 {
                 self.statableView.insertItems(at: insertItems)
             }
+
+            let deletedItems = state.deletedItems
+            if deletedItems.count > 0 {
+                self.statableView.deleteItems(at: deletedItems)
+            }
         }, completion: updatesCompletion)
     }
 }

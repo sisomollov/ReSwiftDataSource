@@ -6,5 +6,6 @@ public protocol ReloadableState: StateType {
 
     var sections: [Section] { get set }
     var insertItems: [IndexPath] { get set }
+    var deletedItems: [IndexPath] { get set }
 }
 
