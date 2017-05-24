@@ -39,5 +39,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.ios.framework = 'UIKit'
-  s.dependency 'ReSwift', '~> 3.0.0'
+  s.dependency 'ReSwift', '~> 4.0.0'
 end
