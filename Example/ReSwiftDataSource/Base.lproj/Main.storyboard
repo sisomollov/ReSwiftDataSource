@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VSn-kT-szA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R1C-dG-a3P" customClass="StatableCollectionView" customModule="ReSwiftDataSource">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fWL-js-dNy">
                                     <size key="itemSize" width="375" height="50"/>
@@ -32,34 +33,111 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaO-5V-11q">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Add" id="kTF-yJ-BqT">
-                                        <connections>
-                                            <action selector="addNew:" destination="vXZ-lx-hvc" id="NLA-R9-T2g"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxY-OZ-bdn">
+                                <rect key="frame" x="132" y="304.5" width="110" height="58"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" title="TableView"/>
+                                <connections>
+                                    <segue destination="B7B-iI-CSe" kind="show" id="5WC-r5-ry8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="R1C-dG-a3P" secondAttribute="trailing" id="1L5-gJ-o4B"/>
                             <constraint firstItem="R1C-dG-a3P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3TY-NV-HVe"/>
-                            <constraint firstAttribute="trailing" secondItem="QaO-5V-11q" secondAttribute="trailing" id="54X-Bj-7cc"/>
-                            <constraint firstItem="QaO-5V-11q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Jal-cS-wBj"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="QaO-5V-11q" secondAttribute="bottom" id="TRm-JD-pnO"/>
+                            <constraint firstItem="SxY-OZ-bdn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Gce-lo-euY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="R1C-dG-a3P" secondAttribute="bottom" id="aeP-Zs-dAI"/>
                             <constraint firstItem="R1C-dG-a3P" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="gfy-at-YY9"/>
+                            <constraint firstItem="SxY-OZ-bdn" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="hMO-G5-k5H"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="collectionView" destination="R1C-dG-a3P" id="BmM-ru-mQa"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="FVb-wh-cNo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="38.23088455772114"/>
+        </scene>
+        <!--TableView-->
+        <scene sceneID="PEc-Li-Vfq">
+            <objects>
+                <viewController id="B7B-iI-CSe" customClass="TableViewController" customModule="ReSwiftDataSource_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OAF-FI-XBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="HdN-Sx-7kB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2ad-lp-PhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16v-7y-FcR">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7nS-DL-J4V"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Reset" id="eWR-YT-76V">
+                                        <connections>
+                                            <action selector="reset:" destination="B7B-iI-CSe" id="VG7-jD-q9U"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-8E-grr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HdN-Sx-7kB" firstAttribute="top" secondItem="16v-7y-FcR" secondAttribute="bottom" id="IIl-YB-rXU"/>
+                            <constraint firstItem="E7W-8E-grr" firstAttribute="top" secondItem="OAF-FI-XBX" secondAttribute="bottom" id="T5q-iB-I1V"/>
+                            <constraint firstAttribute="trailing" secondItem="16v-7y-FcR" secondAttribute="trailing" id="UFl-H6-0qH"/>
+                            <constraint firstItem="16v-7y-FcR" firstAttribute="leading" secondItem="2ad-lp-PhA" secondAttribute="leading" id="bFy-7C-r3b"/>
+                            <constraint firstAttribute="trailing" secondItem="E7W-8E-grr" secondAttribute="trailing" id="gXb-9n-msk"/>
+                            <constraint firstItem="16v-7y-FcR" firstAttribute="top" secondItem="E7W-8E-grr" secondAttribute="bottom" id="hCA-IP-UYT"/>
+                            <constraint firstItem="E7W-8E-grr" firstAttribute="leading" secondItem="2ad-lp-PhA" secondAttribute="leading" id="sGF-BX-lnv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TableView" id="VUU-CK-b1g">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add" id="LHd-pb-HY4">
+                                <connections>
+                                    <action selector="addRows:" destination="B7B-iI-CSe" id="hu6-ln-E12"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Del" id="Gf5-xj-efL">
+                                <connections>
+                                    <action selector="deleteRow:" destination="B7B-iI-CSe" id="elI-04-uVc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="E7W-8E-grr" id="QiC-8g-sR3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGK-uW-Ib4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2066" y="-214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gde-zz-hGR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VSn-kT-szA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjr-S8-056">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="e7K-RO-qdI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xar-jZ-U5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="-644.52773613193403"/>
         </scene>
     </scenes>
 </document>

@@ -1,9 +1,9 @@
 {
   "name": "ReSwiftDataSource",
   "version": "0.1.0",
-  "summary": "A short description of ReSwiftDataSource.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/ReSwiftDataSource",
+  "summary": "CollectionView DataSource using ReSwift states",
+  "description": "ReSwiftDataSource uses ReSwift state as datasource\n    for the collectionView",
+  "homepage": "https://github.com/sisomollov/ReSwiftDataSource",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "SiSo Mollov": "mollov@me.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/ReSwiftDataSource.git",
+    "git": "https://github.com/sisomollov/ReSwiftDataSource.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -24,7 +24,10 @@
   },
   "dependencies": {
     "ReSwift": [
-      "~> 3.0.0"
+      "~> 4.0.0"
+    ],
+    "Changeset": [
+
     ]
   }
 }

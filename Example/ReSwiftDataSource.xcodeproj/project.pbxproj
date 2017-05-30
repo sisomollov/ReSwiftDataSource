@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1203BB24D9EFFB468F155C29 /* Pods_ReSwiftDataSource_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15E730635F86669CDE57CBA /* Pods_ReSwiftDataSource_Tests.framework */; };
-		5C7B18381E3F60DC00172E72 /* SectionsAndItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B18371E3F60DC00172E72 /* SectionsAndItems.swift */; };
-		5C7B183B1E3F613800172E72 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183A1E3F613800172E72 /* MyCell.swift */; };
-		5C7B183E1E3F61AB00172E72 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183D1E3F61AB00172E72 /* MyState.swift */; };
-		5C7B18401E3F6B7700172E72 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B183F1E3F6B7700172E72 /* Reducers.swift */; };
+		5C96F7F61ED74C62007FCA2A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F7F51ED74C62007FCA2A /* TableViewController.swift */; };
+		5C96F7F91ED7815A007FCA2A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F7F81ED7815A007FCA2A /* AppState.swift */; };
+		5C96F7FB1ED7819B007FCA2A /* AppState+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F7FA1ED7819B007FCA2A /* AppState+Reducer.swift */; };
+		5C96F7FE1ED78266007FCA2A /* TestSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F7FD1ED78266007FCA2A /* TestSection.swift */; };
+		5C96F8001ED782A5007FCA2A /* TestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F7FF1ED782A5007FCA2A /* TestRow.swift */; };
+		5C96F8021ED78DB5007FCA2A /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F8011ED78DB5007FCA2A /* TestCell.swift */; };
+		5C96F8081ED839A8007FCA2A /* TestTableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F8071ED839A8007FCA2A /* TestTableState.swift */; };
+		5C96F80A1ED83A6B007FCA2A /* TestTableState+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96F8091ED83A6B007FCA2A /* TestTableState+Actions.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -33,10 +37,14 @@
 
 /* Begin PBXFileReference section */
 		4D76CAB6055616CCBE90F87F /* ReSwiftDataSource.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ReSwiftDataSource.podspec; path = ../ReSwiftDataSource.podspec; sourceTree = "<group>"; };
-		5C7B18371E3F60DC00172E72 /* SectionsAndItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsAndItems.swift; sourceTree = "<group>"; };
-		5C7B183A1E3F613800172E72 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
-		5C7B183D1E3F61AB00172E72 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
-		5C7B183F1E3F6B7700172E72 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
+		5C96F7F51ED74C62007FCA2A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5C96F7F81ED7815A007FCA2A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5C96F7FA1ED7819B007FCA2A /* AppState+Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppState+Reducer.swift"; sourceTree = "<group>"; };
+		5C96F7FD1ED78266007FCA2A /* TestSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSection.swift; sourceTree = "<group>"; };
+		5C96F7FF1ED782A5007FCA2A /* TestRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRow.swift; sourceTree = "<group>"; };
+		5C96F8011ED78DB5007FCA2A /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		5C96F8071ED839A8007FCA2A /* TestTableState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableState.swift; sourceTree = "<group>"; };
+		5C96F8091ED83A6B007FCA2A /* TestTableState+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestTableState+Actions.swift"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ReSwiftDataSource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftDataSource_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,30 +85,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C7B18361E3F602300172E72 /* Sections and Items */ = {
+		5C96F7F71ED78138007FCA2A /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				5C7B18371E3F60DC00172E72 /* SectionsAndItems.swift */,
+				5C96F7F81ED7815A007FCA2A /* AppState.swift */,
+				5C96F7FA1ED7819B007FCA2A /* AppState+Reducer.swift */,
+				5C96F8071ED839A8007FCA2A /* TestTableState.swift */,
+				5C96F8091ED83A6B007FCA2A /* TestTableState+Actions.swift */,
 			);
-			name = "Sections and Items";
-			path = "Sections And Items";
+			path = Redux;
 			sourceTree = "<group>";
 		};
-		5C7B18391E3F611C00172E72 /* Cells */ = {
+		5C96F7FC1ED78241007FCA2A /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				5C7B183A1E3F613800172E72 /* MyCell.swift */,
+				5C96F7FD1ED78266007FCA2A /* TestSection.swift */,
+				5C96F7FF1ED782A5007FCA2A /* TestRow.swift */,
+				5C96F8011ED78DB5007FCA2A /* TestCell.swift */,
 			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		5C7B183C1E3F617A00172E72 /* ReSwift */ = {
-			isa = PBXGroup;
-			children = (
-				5C7B183D1E3F61AB00172E72 /* MyState.swift */,
-				5C7B183F1E3F6B7700172E72 /* Reducers.swift */,
-			);
-			path = ReSwift;
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -129,9 +132,9 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				5C7B183C1E3F617A00172E72 /* ReSwift */,
-				5C7B18391E3F611C00172E72 /* Cells */,
-				5C7B18361E3F602300172E72 /* Sections and Items */,
+				5C96F7F51ED74C62007FCA2A /* TableViewController.swift */,
+				5C96F7FC1ED78241007FCA2A /* TableView */,
+				5C96F7F71ED78138007FCA2A /* Redux */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -329,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		73B79027EA97F28CAA9801E9 /* [CP] Copy Pods Resources */ = {
@@ -389,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -399,12 +402,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C7B18401E3F6B7700172E72 /* Reducers.swift in Sources */,
+				5C96F8001ED782A5007FCA2A /* TestRow.swift in Sources */,
+				5C96F8021ED78DB5007FCA2A /* TestCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				5C7B183B1E3F613800172E72 /* MyCell.swift in Sources */,
-				5C7B18381E3F60DC00172E72 /* SectionsAndItems.swift in Sources */,
-				5C7B183E1E3F61AB00172E72 /* MyState.swift in Sources */,
+				5C96F80A1ED83A6B007FCA2A /* TestTableState+Actions.swift in Sources */,
+				5C96F7FB1ED7819B007FCA2A /* AppState+Reducer.swift in Sources */,
+				5C96F7F61ED74C62007FCA2A /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				5C96F8081ED839A8007FCA2A /* TestTableState.swift in Sources */,
+				5C96F7F91ED7815A007FCA2A /* AppState.swift in Sources */,
+				5C96F7FE1ED78266007FCA2A /* TestSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

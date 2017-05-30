@@ -1,9 +1,11 @@
 PODS:
+  - Changeset (2.1.2)
   - Nimble (5.1.1)
   - Quick (1.0.0)
-  - ReSwift (3.0.0)
+  - ReSwift (4.0.0)
   - ReSwiftDataSource (0.1.0):
-    - ReSwift (~> 3.0.0)
+    - Changeset
+    - ReSwift (~> 4.0.0)
 
 DEPENDENCIES:
   - Nimble (~> 5.1.1)
@@ -15,11 +17,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Changeset: 58ffd3e157651f8aba3964bf723d4ed649d2071b
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
-  ReSwiftDataSource: 34bd28aab68824ca69f94d9d83980c95e9a5da33
+  ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
+  ReSwiftDataSource: 9584bdc48441fbbff96096d9bb98984861a1ab28
 
 PODFILE CHECKSUM: 9ab67644a6cfd756739db04f29e22a192c73e7c3
 
-COCOAPODS: 1.2.0.rc.1
+COCOAPODS: 1.2.1

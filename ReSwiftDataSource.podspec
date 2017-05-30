@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReSwiftDataSource'
-  s.version          = '0.1.0'
-  s.summary          = 'CollectionView DataSource using ReSwift states'
+  s.version          = '0.1.1'
+  s.summary          = 'CollectionView, TableView DataSource using ReSwift states'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -40,4 +40,5 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 2.3'
   s.ios.framework = 'UIKit'
   s.dependency 'ReSwift', '~> 4.0.0'
+  s.dependency 'Changeset'
 end
