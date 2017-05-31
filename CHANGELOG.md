@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/sisomollov/ReSwiftDataSource/compare/0.1.0...v0.1.1) (2017-05-31)
+
+
+### Bug Fixes
+
+* **collectionView delegate:** Add wrapper as collectionView FlowLayout delegate. ([3a14efe](https://github.com/sisomollov/ReSwiftDataSource/commit/3a14efe))
+
+
+### Features
+
+* **delete:** add ability to delete items ([2f6270c](https://github.com/sisomollov/ReSwiftDataSource/commit/2f6270c))
+* **tableView:** Add UITableViewSupport ([fbffb39](https://github.com/sisomollov/ReSwiftDataSource/commit/fbffb39))
+* **update-ReSwift:** bump ReSwift version to 4.0 ([1af2ab4](https://github.com/sisomollov/ReSwiftDataSource/commit/1af2ab4))
+* **updates completion:** Add updateCompletion closure in wrapper for batchUpdates completion ([026c8c9](https://github.com/sisomollov/ReSwiftDataSource/commit/026c8c9))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-01-31)
 
