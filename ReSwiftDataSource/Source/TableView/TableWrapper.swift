@@ -4,7 +4,7 @@ import ReSwift
 import Changeset
 
 open class TableWrapper<S, R, State: TableState>: NSObject, StoreSubscriber,
-    UITableViewDataSource, UITableViewDelegate
+    UITableViewDataSource
 where S: TableSection & Equatable, R: TableRow & Equatable {
 
     // MARK: - Properties
@@ -19,7 +19,6 @@ where S: TableSection & Equatable, R: TableRow & Equatable {
 
         self.tableView             = tableView
         self.tableView?.dataSource = self
-        self.tableView?.delegate   = self
     }
 
     // MARK: - Perform Updates

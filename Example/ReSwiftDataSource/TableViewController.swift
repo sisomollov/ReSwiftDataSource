@@ -72,10 +72,21 @@ final class TableViewController: UIViewController {
         store.dispatch(action)
     }
 
-    final class Wrapper: TableWrapper<TestSection, TestRow, TestTableState> {
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    final class Wrapper: TableWrapper<TestSection, TestRow, TestTableState>, UITableViewDelegate {
+
+        override init(tableView: UITableView) {
+            super.init(tableView: tableView)
+
+            tableView.delegate = self
+        }
+
+        @nonobjc func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             guard let section = state.data[section] as? TestSection else { return nil }
             return section.title
+        }
+
+        func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+            print("Highlight")
         }
     }
 }
