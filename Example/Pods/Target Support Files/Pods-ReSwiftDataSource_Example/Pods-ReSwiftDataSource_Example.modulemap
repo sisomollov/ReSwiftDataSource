@@ -1,6 +1,0 @@
-framework module Pods_ReSwiftDataSource_Example {
-  umbrella header "Pods-ReSwiftDataSource_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
