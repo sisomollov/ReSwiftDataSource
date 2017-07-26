@@ -1,13 +1,10 @@
 
 import UIKit
-import ReSwiftDataSource
-import ReSwift
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

@@ -1,6 +1,5 @@
 # ReSwiftDataSource
 
-[![CI Status](http://img.shields.io/travis/SiSo Mollov/ReSwiftDataSource.svg?style=flat)](https://travis-ci.org/SiSo Mollov/ReSwiftDataSource)
 [![Version](https://img.shields.io/cocoapods/v/ReSwiftDataSource.svg?style=flat)](http://cocoapods.org/pods/ReSwiftDataSource)
 [![License](https://img.shields.io/cocoapods/l/ReSwiftDataSource.svg?style=flat)](http://cocoapods.org/pods/ReSwiftDataSource)
 [![Platform](https://img.shields.io/cocoapods/p/ReSwiftDataSource.svg?style=flat)](http://cocoapods.org/pods/ReSwiftDataSource)

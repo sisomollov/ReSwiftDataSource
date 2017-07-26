@@ -5,6 +5,6 @@ import ReSwiftDataSource
 
 
 struct AppState: StateType {
-    var tableState = TestTableState()
-    var table2State = TestTableState()
+    var tableState = TableState()
+    var collectState = CollectState()
 }

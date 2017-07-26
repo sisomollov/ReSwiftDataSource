@@ -3,17 +3,14 @@ import UIKit
 import ReSwift
 import Changeset
 
-open class TableWrapper<S, R, State: TableState>: NSObject, StoreSubscriber,
-    UITableViewDataSource
-where S: TableSection & Equatable, R: TableRow & Equatable {
+open class TableWrapper<Section, Rows, State>: NSObject, StoreSubscriber, UITableViewDataSource
+where Section: ItemSection & Equatable, Rows: Item & Equatable, State: DataSourceState {
 
     // MARK: - Properties
-
     public var tableView: UITableView?
     public var state: State = State()
 
     // MARK: - Init
-
     public init(tableView: UITableView) {
         super.init()
 
@@ -26,16 +23,16 @@ where S: TableSection & Equatable, R: TableRow & Equatable {
         var sourceState = self.state
 
         switch state.operation {
-        case .updateRows(let section):
-            guard let sourceRows = sourceState.data[section].rows as? [R] else { return }
-            guard let targetRows = state.data[section].rows as? [R] else { return }
+        case .updateItems(let section):
+            guard let sourceRows = sourceState.data[section].items as? [Rows] else { return }
+            guard let targetRows = state.data[section].items as? [Rows] else { return }
             let edits = Changeset.edits(from: sourceRows, to: targetRows)
 
             self.state = state
             tableView?.update(with: edits, in: section)
         case .updateSections, .reset:
-            guard let sourceSections = sourceState.data as? [S] else { return }
-            guard let targetSections = state.data as? [S] else { return }
+            guard let sourceSections = sourceState.data as? [Section] else { return }
+            guard let targetSections = state.data as? [Section] else { return }
             let edits = Changeset.edits(from: sourceSections, to: targetSections)
 
             guard !edits.isEmpty else { return }
@@ -55,59 +52,55 @@ where S: TableSection & Equatable, R: TableRow & Equatable {
         }
     }
 
-    private func batchIndexSets<T: Equatable>(from edits: [Edit<T>])
-        -> (insertions: IndexSet, deletions: IndexSet, updates: IndexSet) {
-
-            var insertions = IndexSet()
-            var deletions = IndexSet()
-            var updates = IndexSet()
-            for edit in edits {
-                let index = edit.destination
-
-                switch edit.operation {
-                case .deletion:
-                    deletions.insert(index)
-                case .insertion:
-                    insertions.insert(index)
-                case .move(let origin):
-                    deletions.insert(origin)
-                    insertions.insert(index)
-                case .substitution:
-                    updates.insert(index)
-                }
-            }
-
-            return (insertions, deletions, updates)
-    }
-
     // MARK: - DataSource
     public func numberOfSections(in tableView: UITableView) -> Int {
         assert(state.data.count > 0, "TableState.data must have at least one section")
 
         return state.data.count
     }
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let number = state.data[section].rows.count
+        let number = state.data[section].items.count
 
         return number
     }
-
     public
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let section = state.data[indexPath.section]
+        let row = section.items[indexPath.row]
 
-        let row = section.rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseId, for: indexPath)
-
-        if let cell = cell as? TableCell {
-            cell.apply(row: row)
+        if let cell = cell as? ReusableView {
+            cell.apply(item: row)
         }
 
         return cell
     }
-    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int)
+        -> String? {
+        let section = self.section(index: section)
+        return section?.headerItem != nil ? nil: section?.headerTitle
+    }
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int)
+        -> String? {
+        let section = self.section(index: section)
+        return section?.footerItem != nil ? nil: section?.footerTitle
+    }
+
+    // MARK: - Public API
+    public func reusableView(item: Item) -> UIView? {
+        let reusableView = tableView?.dequeueReusableHeaderFooterView(withIdentifier: item.reuseId)
+        if let reusableView = reusableView as? ReusableView {
+            reusableView.apply(item: item)
+        }
+
+        return reusableView
+    }
+    public func section(index: Int) -> Section? {
+        if let section = state.data[index] as? Section {
+            return section
+        }
+        return nil
+    }
 }
 
 // MARK: - StoreSubscriber

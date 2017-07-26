@@ -7,10 +7,10 @@ import ReSwiftDataSource
 func appReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
 
-    state.tableState = TableReducer<TestTableState, TestTableAction>.reducer(
-        action: action, state: state.tableState)
-    state.table2State = TableReducer<TestTableState, Test2TableAction>.reducer(
-        action: action, state: state.table2State)
+    state.tableState = DataSourceReducer<TableState, TableAction>
+        .reducer(action: action, state: state.tableState)
+    state.collectState = DataSourceReducer<CollectState, CollectAction>
+        .reducer(action: action, state: state.collectState)
 
     return state
 }
