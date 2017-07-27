@@ -1,11 +1,11 @@
 # Usage
 
 ##### Cells (ReusableViews):
-First you have to create the cells, headers and footers classes. No matter **UITableViews** or **UICollectionViews** they conforms to the *ReusableView* protocol.
+First you have to create the cells, headers and footers classes. **UITableViews** or **UICollectionViews** conform to the *ReusableView* protocol.
 ***
 
 ##### Items:
-Every **ReusableView** has a *Item* that corresponds to it. Items holds all of the data that every ReusableView has to present.
+Every **ReusableView** has an *Item* that corresponds to it. Items holds all of the data that every ReusableView has to present.
 
 Example:
 ```swift
@@ -32,7 +32,7 @@ final class TableCell: UITableViewCell, ReusableView {
 ***
 
 ##### Sections
-After we were created the ReusableViews and their Items. We need to put these items into item sections.
+After creating ReusableViews and Items. We need to put these items into item sections.
 To create item sections we are going to use **ItemSection** and Equatable protocols.
 
 Example:
@@ -68,10 +68,9 @@ var footerItem: Item?
 ***
 
 ##### State
-After reusable views, items and item sections has been created.
-Both **UITableViews** and **UICollectionViews** has to have a state, that conforms to *DataSourceState*.
+After reusable views, items and item sections has been created, **UITableViews** and **UICollectionViews** need to have a state, that conforms to *DataSourceState*.
 
-It's a good thing if the state also conforms to Equatable protocol to lower refreshing attempts.
+It is advisable that the state also conforms to Equatable protocol to lower refreshing attempts.
 
 Example:
 ```swift
