@@ -22,14 +22,16 @@ where Section: ItemSection & Equatable, I: Item & Equatable, State: DataSourceSt
     public func performUpdates(state: State) {
         var sourceState = self.state
 
-        switch state.operation {
+        switch state.operation.value {
         case .updateItems(let section):
             guard let sourceItems = sourceState.data[section].items as? [I] else { return }
             guard let targetItems = state.data[section].items as? [I] else { return }
 
             let edits = Changeset.edits(from: sourceItems, to: targetItems)
-            self.state = state
-            collectionView?.update(with: edits, in: section, completion: nil)
+            collectionView?.performBatchUpdates({
+                self.state = state
+                self.collectionView?.update(with: edits, in: section, completion: nil)
+            }, completion: nil)
         case .updateSections, .reset:
             guard let sourceSections = sourceState.data as? [Section] else { return }
             guard let targetSections = state.data as? [Section] else { return }
@@ -37,12 +39,14 @@ where Section: ItemSection & Equatable, I: Item & Equatable, State: DataSourceSt
 
             guard !edits.isEmpty else { return }
             let (insertions, deletions, updates) = batchIndexSets(from: edits)
-            self.state = state
+
             collectionView?.performBatchUpdates({
+                self.state = state
                 if !deletions.isEmpty { self.collectionView?.deleteSections(deletions) }
                 if !insertions.isEmpty { self.collectionView?.insertSections(insertions) }
                 if !updates.isEmpty { self.collectionView?.reloadSections(updates) }
             }, completion: nil)
+
         default: break
         }
     }

@@ -22,7 +22,7 @@ where Section: ItemSection & Equatable, Rows: Item & Equatable, State: DataSourc
     func performUpdates(state: State) {
         var sourceState = self.state
 
-        switch state.operation {
+        switch state.operation.value {
         case .updateItems(let section):
             guard let sourceRows = sourceState.data[section].items as? [Rows] else { return }
             guard let targetRows = state.data[section].items as? [Rows] else { return }

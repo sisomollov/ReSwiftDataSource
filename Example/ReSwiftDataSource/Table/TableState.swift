@@ -3,7 +3,7 @@ import Foundation
 import ReSwiftDataSource
 
 struct TableState: DataSourceState {
-    var operation: DataSourceStateOperation = .none
+    var operation: DataSourceStateOperation = DataSourceStateOperation()
     var data: [ItemSection] = [
         TableSection(title: "Section One", headerItem: TableHeaderItem(title: "Section One"))
     ]

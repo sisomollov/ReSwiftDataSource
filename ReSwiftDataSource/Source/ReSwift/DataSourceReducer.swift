@@ -17,13 +17,13 @@ open class DataSourceReducer<State: DataSourceState, Action: DataSourceAction> {
     // MARK: - Private
     private static func data(action: Action, state: [ItemSection]) ->
         [ItemSection] {
-            switch action.operation {
+            switch action.operation.value {
             case .updateItems(let section):
                 guard let items = action.items else { return state }
                 var state = state
                 state[section].items = items
                 return state
-            case .updateSections:
+            case .updateSections, .reset:
                 return action.sections ?? state
             default:
                 return state
@@ -31,7 +31,6 @@ open class DataSourceReducer<State: DataSourceState, Action: DataSourceAction> {
     }
     private static func operation(action: Action, state: DataSourceStateOperation) ->
         DataSourceStateOperation {
-
             return action.operation
     }
 }

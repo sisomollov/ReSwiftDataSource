@@ -23,16 +23,8 @@ final class TableVC: UIViewController {
         super.viewWillAppear(animated)
 
         store.subscribe( wrapper ) { $0.select { state in state.tableState } }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
 
-        store.unsubscribe( wrapper )
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        var section = wrapper.section(index: 0)
+        guard var section = wrapper.section(index: 0) else { return }
 
         let item1 = TableRow(text: "Test message 1")
         let item2 = TableRow(text: "Test message 2")
@@ -40,5 +32,10 @@ final class TableVC: UIViewController {
         section.items.append(item2)
 
         store.dispatch( TableAction.updateItems(section.items, in: 0) )
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        store.unsubscribe( wrapper )
     }
 }

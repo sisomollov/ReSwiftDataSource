@@ -85,7 +85,13 @@
                             <constraint firstItem="q4t-JL-rQJ" firstAttribute="top" secondItem="mLi-xq-zwA" secondAttribute="bottom" id="fdX-y1-Yxh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CollectionView" id="RSD-Xs-0RN"/>
+                    <navigationItem key="navigationItem" title="CollectionView" id="RSD-Xs-0RN">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Last" id="opi-38-vwW">
+                            <connections>
+                                <action selector="deleteLastItem" destination="cFY-XX-Gcz" id="JZ1-lO-5l0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mLi-xq-zwA" id="iko-BI-CcK"/>
                     </connections>

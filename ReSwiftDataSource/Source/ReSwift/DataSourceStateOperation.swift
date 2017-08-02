@@ -2,25 +2,22 @@
 import Foundation
 import ReSwift
 
-public enum DataSourceStateOperation: RawRepresentable, Equatable {
-    case none, reset(ItemSection), updateItems(section: Int), updateSections
-
-    // MARK: - RawRepresentable
-    public typealias RawValue = String
-    public var rawValue: String {
-        switch self {
-        case .none: return "None"
-        case .reset: return "Reset"
-        case .updateItems: return "Update Items"
-        case .updateSections: return "Update Sections"
-        }
+public struct DataSourceStateOperation: Equatable {
+    public enum Operation {
+        case none, reset, updateItems(section: Int), updateSections
     }
-    public init?(rawValue: String) {
-        return nil
+    public var value: Operation = .none {
+        didSet { id = UUID().uuidString }
     }
+    internal var id: String = UUID().uuidString
 
-    // MARK: - Equatable
     public static func ==(lhs: DataSourceStateOperation, rhs: DataSourceStateOperation) -> Bool {
-        return lhs.rawValue == rhs.rawValue
+        return lhs.id == rhs.id
+    }
+
+    public init(value: Operation = .none) {
+        self.value = value
     }
 }
+
+
