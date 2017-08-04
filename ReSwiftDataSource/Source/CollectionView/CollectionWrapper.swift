@@ -19,7 +19,7 @@ where Section: ItemSection & Equatable, I: Item & Equatable, State: DataSourceSt
     }
 
     // MARK: - Updates
-    public func performUpdates(state: State) {
+    open func performUpdates(state: State) {
         var sourceState = self.state
 
         switch state.operation.value {
@@ -78,7 +78,7 @@ where Section: ItemSection & Equatable, I: Item & Equatable, State: DataSourceSt
 
         return cell
     }
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let error = { fatalError("Wrapper: missing item for supplimentary view of kind: \(kind)") }
         guard let section = section(index: indexPath.section) else { error() }
 
@@ -122,7 +122,7 @@ where Section: ItemSection & Equatable, I: Item & Equatable, State: DataSourceSt
 // MARK: - StoreSubscriber
 extension CollectionWrapper {
     public typealias StoreSubscriberStateType = State
-    public func newState(state: State) {
+    open func newState(state: State) {
         performUpdates(state: state)
     }
 }

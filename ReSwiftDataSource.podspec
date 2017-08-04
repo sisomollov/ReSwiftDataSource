@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReSwiftDataSource'
-  s.version          = '1.1'
+  s.version          = '1.1.1'
   s.summary          = 'CollectionView, TableView DataSource using ReSwift states'
 
 # This description is used to generate tags and improve search results.

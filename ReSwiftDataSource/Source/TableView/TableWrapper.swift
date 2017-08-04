@@ -19,7 +19,7 @@ where Section: ItemSection & Equatable, Rows: Item & Equatable, State: DataSourc
     }
 
     // MARK: - Perform Updates
-    func performUpdates(state: State) {
+    open func performUpdates(state: State) {
         var sourceState = self.state
 
         switch state.operation.value {
@@ -87,7 +87,7 @@ where Section: ItemSection & Equatable, Rows: Item & Equatable, State: DataSourc
     }
 
     // MARK: - Public API
-    public func reusableView(item: Item) -> UIView? {
+    open func reusableView(item: Item) -> UIView? {
         let reusableView = tableView?.dequeueReusableHeaderFooterView(withIdentifier: item.reuseId)
         if let reusableView = reusableView as? ReusableView {
             reusableView.apply(item: item)
@@ -107,7 +107,7 @@ where Section: ItemSection & Equatable, Rows: Item & Equatable, State: DataSourc
 extension TableWrapper {
     public typealias StoreSubscriberStateType = State
     
-    public func newState(state: State) {
+    open func newState(state: State) {
         performUpdates(state: state)
     }
 }
