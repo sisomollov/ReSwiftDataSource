@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReSwiftDataSource'
-  s.version          = '1.1.1'
+  s.version          = '1.2.0'
   s.summary          = 'CollectionView, TableView DataSource using ReSwift states'
 
 # This description is used to generate tags and improve search results.
@@ -39,6 +39,6 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.ios.framework = 'UIKit'
-  s.dependency 'ReSwift', '~> 4.0.0'
+  s.dependency 'ReSwift'
   s.dependency 'Changeset'
 end

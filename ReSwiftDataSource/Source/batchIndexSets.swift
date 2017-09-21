@@ -2,7 +2,7 @@
 import Foundation
 import Changeset
 
-func batchIndexSets<T: Equatable>(from edits: [Edit<T>])
+func batchIndexSets<T>(from edits: [Edit<T>])
     -> (insertions: IndexSet, deletions: IndexSet, updates: IndexSet) {
 
         var insertions = IndexSet()
