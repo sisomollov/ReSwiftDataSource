@@ -1,7 +1,7 @@
 PODS:
-  - Changeset (2.1.2)
+  - Changeset (3.0)
   - ReSwift (4.0.0)
-  - ReSwiftDataSource (1.1.1):
+  - ReSwiftDataSource (1.2.0):
     - Changeset
     - ReSwift
 
@@ -13,10 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Changeset: 58ffd3e157651f8aba3964bf723d4ed649d2071b
+  Changeset: cbb84a74639049a7b96fc64851e8a9cfcc3c9989
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
-  ReSwiftDataSource: dca9ce4874335a3ddb7c3c44f05278628db9ca29
+  ReSwiftDataSource: 6328868455562ad0f68f0ebb3129d9e1e051c016
 
 PODFILE CHECKSUM: 59435b9a7de9bcc84b30647077bdc33f91711bb7
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.beta.2
