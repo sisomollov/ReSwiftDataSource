@@ -451,6 +451,7 @@
 				);
 				INFOPLIST_FILE = "ReSwiftDataSource-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inceptdevelopment.Diasyst.ReSwiftDataSource-iOS";
 				PRODUCT_MODULE_NAME = ReSwiftDataSource;
@@ -476,6 +477,7 @@
 				);
 				INFOPLIST_FILE = "ReSwiftDataSource-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inceptdevelopment.Diasyst.ReSwiftDataSource-iOS";
 				PRODUCT_MODULE_NAME = ReSwiftDataSource;
